@@ -20,14 +20,18 @@ export default function Navbar() {
             {open ? (
               <path d="M3 3L15 15M15 3L3 15" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
             ) : (
-              <path d="M2 5H16M2 9H16M2 13H16" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+              <path d="M2 5H16M2 13H16M2 13H16" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
             )}
           </svg>
         </button>
 
         {/* Logo: desktop left, mobile center */}
         <a href="#top" className="md:order-none order-2 md:mx-0 mx-auto">
-          <img src="/assets/logo-text.png" alt="Dev Stack" className="h-7 w-auto" />
+          <img 
+            src={`${import.meta.env.BASE_URL}assets/logo-text.png`} 
+            alt="Dev Stack" 
+            className="h-7 w-auto" 
+          />
         </a>
 
         {/* Desktop center links */}
