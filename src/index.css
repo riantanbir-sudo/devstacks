@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-display: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+
+  --color-bg: #ffffff;
+  --color-surface: #ffffff;
+  --color-surface-muted: #f8f8fa;
+  --color-line: #ececef;
+  --color-ink: #16161d;
+  --color-muted: #6b7080;
+  --color-muted-2: #9a9fac;
+
+  --color-brand-1: #ff7a30;
+  --color-brand-2: #ec2f8f;
+  --color-brand-3: #8b3ff5;
+}
+
+:root {
+  --brand-gradient: linear-gradient(90deg, var(--color-brand-1) 0%, var(--color-brand-2) 55%, var(--color-brand-3) 100%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+}
+
+.text-gradient {
+  background: var(--brand-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.bg-brand-gradient {
+  background: var(--brand-gradient);
+}
+
+::selection {
+  background: var(--color-brand-2);
+  color: #fff;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-brand-2);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@keyframes rise-in {
+  from { transform: translateY(14px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+.rise-in {
+  animation: rise-in 0.55s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: var(--color-line);
+  border-radius: 999px;
+}
