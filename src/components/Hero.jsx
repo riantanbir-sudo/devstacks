@@ -29,7 +29,7 @@ export default function Hero() {
 
       <div className="rise-in flex justify-center md:justify-end" style={{ animationDelay: '100ms' }}>
         <img
-          src="/assets/banner-stack.png"
+          src="./assets/banner-stack.png"
           alt="Illustration of a layered development stack"
           className="w-full max-w-sm md:max-w-md"
         />
