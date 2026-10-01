@@ -10,7 +10,8 @@ export default function Technologies() {
 
   useEffect(() => {
     setLoading(true);
-    fetch('/technologies.json')
+    // ✅ GitHub Pages-এর sub-path ঠিক করার জন্য import.meta.env.BASE_URL ব্যবহার করা হলো
+    fetch(`${import.meta.env.BASE_URL}technologies.json`)
       .then((res) => res.json())
       .then((data) => setTechs(data))
       .catch(() => toast.error('Could not load technologies.'))
